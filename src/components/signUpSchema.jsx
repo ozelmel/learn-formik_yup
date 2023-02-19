@@ -1,7 +1,9 @@
 import * as Yup from "yup";
 
 export const signUpSchema = Yup.object().shape({
-  fullName: Yup.string().max(20, "must be 20 or less characters").required(),
+  fullName: Yup.string()
+    .max(20, "must be 20 or less characters")
+    .required("lutfen isim kısmını boş bırakmayınız"),
   email: Yup.string()
     .email("lutfen geçerli email adresi giriniz")
     .required("lutfen email kısmını boş bırakmayınız"),
